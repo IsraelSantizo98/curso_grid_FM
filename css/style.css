@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
 :root{
     --cyan: hsl(179, 62%, 43%);
+    --white-firts: #fff;
+    --cyan-third: #4ABEBD;
     --bright-yellow: hsl(71, 73%, 54%);
     --light-gray: hsl(204, 43%, 93%);
     --grayish-blue: hsl(218, 22%, 67%);
@@ -15,7 +17,98 @@ html {
 *::after {
     box-sizing: inherit;
 }
+/*Globales*/
+h1{
+    color: var(--cyan);
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+h2{
+    color: var(--bright-yellow);
+}
+h3{
+    color: var(--light-gray);
+}
+p, span, small{
+    font-weight: 400;
+}
+.firts p{
+    color: var(--grayish-blue);
+}
+.second p, .third p{
+    color: var(--light-gray);
+}
+.button{
+    background-color: var(--bright-yellow);
+    text-decoration: none;
+    color: white;
+    padding: 1.5rem 8rem;
+    margin: 2rem 0;
+    border-radius: .8rem;
+    text-align: center;
+}
 body{
     font-size: 1.6rem;
     font-family: 'Karla', sans-serif;
+    background-color: var(--light-gray);
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "first first"
+    "second third";
+    /* padding: 2rem; */
+    /* max-width: 90rem; */
+}
+.first{
+    grid-area: first;
+    background-color: var(--white-firts);
+    padding: 2rem 4rem;
+    border-radius: 1rem 1rem 0 0;
+    /* display: grid;
+    justify-content: stretch; */
+    /* border: 1px solid black; */
+}
+.container-p-firts{
+    max-width: 55rem;
+}
+.second{
+    grid-area: second;
+    background-color: var(--cyan);
+    padding: 2rem 4rem;
+    display: grid;
+    justify-content: stretch;
+    border-radius: 0 0  0 1rem; 
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+.second span{
+    color: white;
+    font-size: 3.5rem;
+}
+.second span small{
+    
+    color: #68CBCD;
+    font-size: 1.6rem;
+}
+.third{
+    grid-area: third;
+    background-color: var(--cyan-third);
+    padding: 2rem 4rem;
+    border-radius: 0 0 1rem 0;
+    /* border: 1px solid black; */
+}
+.container-p-third{
+    max-width: 21.5rem;
+}
+.container-p-third p{
+    margin: 0;
+    line-height: 1.5;
 }
